@@ -49,6 +49,7 @@ class AccountUpdateView(UpdateView):
     # User라는 장고에서 기본적으로 사용하는 model사용
     model = User
     # form 지정
+    context_object_name = 'target_user'
     form_class = AccountUpdateForm
     # 연결 성공시 이동하는 페이지 지정
     # reverse는 그대로 class에서 사용할 수 없기때문에, class형 view에서는 reverse_lazy
@@ -58,5 +59,6 @@ class AccountUpdateView(UpdateView):
 
 class AccountDeleteView(DeleteView):
     model = User
+    context_object_name = 'target_user'
     success_url = reverse_lazy('accountapp:login')
     template_name = 'accountapp/delete.html'

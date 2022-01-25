@@ -7,7 +7,7 @@
         <div class="mb-4">
             <h4>Change Info</h4>
         </div>
-        <form action="{% url 'accountapp:update' pk=user.pk %}" method="post">
+        <form action="{% url 'accountapp:update' pk=target_user.pk %}" method="post">
             {% csrf_token %}
             <!-- 우리가 지정한 form 파일을 그대로 받아와준다. -->
             {% bootstrap_form form %}
